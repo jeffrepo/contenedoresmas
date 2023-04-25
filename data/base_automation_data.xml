@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="contenedoresmas_crear_crm_server" model="base.automation">
+            <field name="name">Base Automation: Crear Lead otro server</field>
+            <field name="state">code</field>
+            <field name="code">record.crear_oportunidad('https://avanguardiatech-contenedoresmas-pruebas-7433491.dev.odoo.com/xmlrpc', 'avanguardiatech-contenedoresmas-pruebas-7433491','leonardo@contenedoresmas.com','Contenedoresmas23')</field>
+            <field name="trigger">on_create</field>
+            <field name="active" eval="True"/>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <!-- <field name="filter_domain">[('state', '=', 'draft')]</field> -->
+        </record>
+</odoo>

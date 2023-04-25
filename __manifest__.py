@@ -9,8 +9,9 @@
     'summary': 'Contenedores mas',
     'description': """ Contenedores mas """,
     'author': 'JS',
-    'depends': ['base','crm'],
+    'depends': ['base','base_automation','crm'],
     'data': [
+        'data/base_automation_data.xml',
     ],
 
     'installable': True,
