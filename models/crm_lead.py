@@ -10,6 +10,7 @@ class Lead(models.Model):
     _inherit = "crm.lead"
 
     medida_contenedor = fields.Char('Medidas de contenedor')
+    notas_extras = fields.Text('Notas extras')
 
     # def crear_oportunidad(self, url, db, username, password):
     #
