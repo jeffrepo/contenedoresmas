@@ -7,6 +7,7 @@
             <field name="arch" type="xml">
                 <field name="mobile" position="after">
                     <field name="medida_contenedor"/>
+                    <field name="notas_extras"/>    
                 </field>
             </field>
         </record>
