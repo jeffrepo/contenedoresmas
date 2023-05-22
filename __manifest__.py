@@ -9,10 +9,11 @@
     'summary': 'Contenedores mas',
     'description': """ Contenedores mas """,
     'author': 'JS',
-    'depends': ['base','base_automation','crm'],
+    'depends': ['base','base_automation','crm','account'],
     'data': [
         # 'data/base_automation_data.xml',
         'views/crm_lead_views.xml',
+        'views/reporte_invoice.xml',
     ],
 
     'installable': True,

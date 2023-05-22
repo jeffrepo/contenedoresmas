@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="document_tax_totals_inherit_contenedoresmas" inherit_id="account.document_tax_totals">
+        <xpath expr="//*[@class='border-black o_subtotal']" position="replace">
+            <tr class="border-black o_subtotal">
+                <td>
+                    
+                    <t t-if="subtotal['name'] == 'Importe sin impuestos'">
+                        Subtotal
+                    </t>
+                    <t t-else="">
+                        <strong t-esc="subtotal['name']"/>
+                    </t>    
+                </td>
+                
+                <td class="text-end">
+                    <span
+                        t-att-class="oe_subtotal_footer_separator"
+                        t-esc="subtotal['formatted_amount']"
+                    />
+                </td>
+            </tr>
+        </xpath>
+    </template>
+
+</odoo>
