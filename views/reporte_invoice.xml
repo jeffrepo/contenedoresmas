@@ -7,7 +7,7 @@
                 <td>
                     
                     <t t-if="subtotal['name'] == 'Importe sin impuestos'">
-                        Subtotal
+                        SUBTOTAL
                     </t>
                     <t t-else="">
                         <strong t-esc="subtotal['name']"/>
