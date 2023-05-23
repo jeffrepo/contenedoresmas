@@ -10,7 +10,7 @@ class AccountMove(models.Model):
     _inherit = "account.move"
 
     tipo_cambio = fields.Float(
-        compute='_compute_currency_rate_contenedores',
+        compute='_compute_currency_rate_contenedores',string="Tipo de cambio",
         help="Currency rate from company currency to document currency.",
     )
 
@@ -27,7 +27,7 @@ class AccountMove(models.Model):
                 factura.tipo_cambio = tipo_cambio
             else:
                 factura.tipo_cambio = 1.0
-                
+
     # def crear_oportunidad(self, url, db, username, password):
     #
     #     for record in self:
