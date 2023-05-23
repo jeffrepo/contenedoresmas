@@ -11,25 +11,3 @@ class Lead(models.Model):
 
     medida_contenedor = fields.Char('Medidas de contenedor')
     notas_extras = fields.Text('Notas extras')
-
-    # def crear_oportunidad(self, url, db, username, password):
-    #
-    #     for record in self:
-    #         if record.type == "lead":
-    #             print ("URLL", url)
-    #             common = xmlrpc.client.ServerProxy(url +'/common')
-    #             uid = common.login(db, username, password)
-    #             print ("UIDDD", uid)
-    #             models = xmlrpc.client.ServerProxy(url +'/object')
-    #             prodid = models.execute_kw(db, uid, password, 'crm.lead', 'create', [{
-    #                 'contact_name': record.contact_name,
-    #                 'name': record.name,
-    #                 'type': record.type,
-    #                 'email_from': record.email_from,
-    #                 'mobile': record.mobile,
-    #                 'city': record.city,
-    #                 'description': record.description.replace('\n', '<br>') if record.description else "",
-    #
-    #               }])
-    #             print ("prodid",prodid)
-    #     return True
