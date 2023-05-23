@@ -14,6 +14,7 @@
         # 'data/base_automation_data.xml',
         'views/crm_lead_views.xml',
         'views/reporte_invoice.xml',
+        'views/account_move_views.xml',
     ],
 
     'installable': True,
