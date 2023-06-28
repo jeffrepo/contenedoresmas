@@ -14,6 +14,11 @@ class AccountMove(models.Model):
         help="Currency rate from company currency to document currency.",
     )
 
+    factura_proveedor_id = fields.Many2one(
+        comodel_name='account.move',  # Nombre del modelo relacionado
+        string='Factura Proveedor'
+    )
+
     @api.depends('currency_id', 'company_id', 'invoice_date')
     def _compute_currency_rate_contenedores(self):
         for factura in self:
