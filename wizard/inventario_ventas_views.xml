@@ -26,14 +26,20 @@
         </field>
     </record>
 
-        <act_window id="launch_contenedoresmas_nombre"
-                    name="Inventario Ventas"
-                    binding_model="account.account"
-                    res_model="contenedoresmas.nombre.wizard"
-                    view_mode="form"
-                    target="new"/>
+    <record id="launch_contenedoresmas_nombre" model="ir.actions.act_window">
+        <field name="name">Inventario Ventas</field>
+        <field name="res_model">contenedoresmas.nombre.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="account.model_account_account"/>
+        <field name="context">{}</field>
+    </record>
 
-        <menuitem action="launch_contenedoresmas_nombre" id="menu_reporte_nombre" parent="account.account_reports_management_menu" sequence="10"/>
+    <menuitem id="menu_reporte_nombre" 
+          name="Reporte de Inventario" 
+          action="launch_contenedoresmas_nombre" 
+          parent="account.account_reports_management_menu" 
+          sequence="10"/>
 
 
   </data>
