@@ -30,9 +30,9 @@
         <field name="name">Inventario Ventas</field>
         <field name="res_model">contenedoresmas.nombre.wizard</field>
         <field name="view_mode">form</field>
+        <field name="view_id" ref = "contenedoresmas_nombre_form_view"></field>
         <field name="target">new</field>
-        <field name="binding_model_id" ref="account.model_account_account"/>
-        <field name="context">{}</field>
+        
     </record>
 
     <menuitem id="menu_reporte_nombre" 
@@ -45,4 +45,3 @@
   </data>
 
 </odoo>
-
