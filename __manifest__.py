@@ -9,7 +9,7 @@
     'summary': 'Contenedores mas',
     'description': """ Contenedores mas """,
     'author': 'JS',
-    'depends': ['base','base_automation','crm','product','account'],
+    'depends': ['base','base_automation','crm','product','account','account_accountant','account_period_and_fiscalyear'],
     'data': [
         # 'data/base_automation_data.xml',
         'wizard/inventario_ventas_views.xml',
