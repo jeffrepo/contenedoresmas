@@ -14,6 +14,9 @@ class AccountMove(models.Model):
         help="Currency rate from company currency to document currency.",
     )
 
+    tipo_factura = fields.Char(string="Tipo de Factura")
+
+
     factura_proveedor_id = fields.Many2one(
         comodel_name='account.move',  # Nombre del modelo relacionado
         string='Factura Proveedor'

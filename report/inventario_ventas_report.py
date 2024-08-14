@@ -207,7 +207,9 @@ class LibroVentas(models.AbstractModel):
                                         if linea.discount > 0:
                                             precio_unitario = linea.price_unit - (linea.price_unit*(linea.discount/100))
 
-                                        monto_convertir_precio = compra.currency_id.with_context(date=compra.invoice_date).compute(precio_unitario, compra.company_id.currency_id)
+                                        monto_convertir_precio = compra.currency_id._convert(precio_unitario, compra.company_id.currency_id, compra.company_id, compra.invoice_date)
+
+
 
                                         r = linea.tax_ids.compute_all(monto_convertir_precio, currency=compra.currency_id, quantity=linea.quantity, product=linea.product_id, partner=compra.partner_id)
 
@@ -216,7 +218,7 @@ class LibroVentas(models.AbstractModel):
                                                 dic['iva'] += i['amount']
                                             logging.warn(i)
 
-                                        monto_convertir = compra.currency_id.with_context(date=compra.invoice_date).compute(linea.price_subtotal, compra.company_id.currency_id)
+                                        monto_convertir = compra.currency_id._convert(linea.price_subtotal, compra.company_id.currency_id, compra.company_id, compra.invoice_date)
 
                                         if compra.tipo_factura == 'varios':
                                             if linea.product_id.type == 'product':
@@ -233,7 +235,8 @@ class LibroVentas(models.AbstractModel):
                                                 dic['servicio'] +=  monto_convertir
 
                                     else:
-                                        monto_convertir = compra.currency_id.with_context(date=compra.invoice_date).compute(linea.price_total, compra.company_id.currency_id)
+                                        monto_convertir = compra.currency_id._convert(linea.price_total, compra.company_id.currency_id, compra.company_id, compra.invoice_date)
+
 
                                         if compra.tipo_factura == 'varios':
                                             if linea.product_id.type == 'product':
